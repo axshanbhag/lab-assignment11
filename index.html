@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Handlers</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 15px;
+      padding: 15px;
+      background-color: #a98e8e;
+    }
+    h2 {
+      text-align: center;
+      color: white;
+    }
+    .buttons {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    button {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding: 15px 30px;
+      cursor: pointer;
+      margin: 15px;
+      font-size: 15px;
+      color: white;
+      background-color: black;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 9px #999;
+    }
+    button:hover {
+      opacity: 1;
+      transform: translateY(-2.5px);
+    }
+    button:active {
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    .content {
+      margin-top: 15px;
+      font-size: 15px;
+      color: black;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<h2>Click "Show Content" to get started!</h2>
+<div class="buttons">
+  <button onclick="show()">Show Content</button>
+  <button onclick="hide()">Hide Content</button>
+  <button onclick="change()">Change Background Color</button>
+  <button onclick="reset()">Reset Background</button>
+  <div class="content hidden" id="aboutme">
+    <p>Hi! My name is Arpita Shanbhag and I invite you to stick around and play with some buttons today!</p>
+    <p>This button will reveal some important information to you such as who I am and what's within this website.</p>
+    <ul>
+      <li>Arpita Shanbhag is currently a sophomore at Emerald High School in the Bay Area.</li>
+      <li>She is a hopeful, young individial who wants to make a difference in the computer science industry.</li>
+      <li>Arpita Shanbhag loves to dance (she is part of her school's Dance Team), growing flowers, and reading!</li>
+    </ul>
+    <p>About the Website: </p>
+    <ul>
+      <li>The button "Show Content" reveals this information</li>
+      <li>The button "Hide Content" will hide this information</li>
+      <li>The button "Change Background Color" will change the background color to white.</li>
+      <li>The button "Reset Background" will reset the background to it's original pink color.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function show() {
+    const content = document.getElementById('aboutme');
+    content.classList.remove('hidden');
+  }
+  function hide() {
+    const content = document.getElementById('aboutme');
+    content.classList.add('hidden');
+  }
+  function change() {
+    document.body.style.backgroundColor = 'white';
+  }
+  function reset() {
+    document.body.style.backgroundColor = '#a98e8e';
+  }
+</script>
+</body>
+</html>
